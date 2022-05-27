@@ -1,8 +1,8 @@
 package = "lua-resty-influx-mufanh"
-version = "0.2.1-0"
+version = "0.2.1-1"
 source = {
    url = "git://github.com/mufanh/lua-resty-influx",
-   tag = "0.2.1"
+   tag = "0.2.1-1"
 }
 description = {
    summary = "OpenResty client writer for InfluxDB.",
