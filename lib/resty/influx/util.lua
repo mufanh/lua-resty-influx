@@ -51,10 +51,17 @@ function _M.write_http(msg, params)
 		headers.Authorization = str_fmt("Basic %s", encode_base64(params.auth))
 	end
 
+	local query;
+	if params.rp then
+		query = { db = params.db, precision = params.precision, rp = params.rp }
+	else
+		query = { db = params.db, precision = params.precision }
+	end
+
 	local res, err = client:request_uri(
 		path,
 		{
-			query      = { db = params.db, precision = params.precision },
+			query      = query,
 			method     = method,
 			headers    = headers,
 			body       = msg,
@@ -86,6 +93,7 @@ function _M.validate_options(opts)
 	opts.precision = opts.precision or 'ms'
 	opts.ssl       = opts.ssl or false
 	opts.auth      = opts.auth or nil
+	opts.rp        = opts.rp or nil
 
 	if type(opts.host) ~= 'string' then
 		return false, 'invalid host'

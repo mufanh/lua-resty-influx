@@ -117,6 +117,12 @@ Sets the port to which `ngx.socket.udp` and `resty.http` will attempt to connect
 
 Sets the db to which `resty.http` will attempt to connect. This option is ignored when `udp` is the configured protocol.
 
+#### rp
+
+*Default*: nil
+
+Sets the db retention policy. This option is only support `http` or `https`.
+
 #### hostname
 
 *Default*: `host`

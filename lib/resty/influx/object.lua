@@ -214,6 +214,7 @@ function _M.new(self, opts)
 		precision = opts.precision,
 		ssl       = opts.ssl,
 		auth      = opts.auth,
+		rp        = opts.rp,
 
 		-- obj fields
 		_tag_cnt   = 0,
